@@ -1,4 +1,8 @@
+# Deep Virtual Try On
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/LICENSE)
 # Demo
+
 ## API
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/flask_demo.gif)
 
