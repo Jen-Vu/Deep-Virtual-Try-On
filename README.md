@@ -8,6 +8,11 @@
 
 ## Android Application
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/dvtron_android.gif)
+## Results
+[!alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_1.jpeg)
+[!alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_2.jpeg)
+[!alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_3.jpeg)
+
 
 ```
 
