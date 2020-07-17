@@ -28,7 +28,7 @@ https://colab.research.google.com/drive/1rlk-nOgIJa14UDNQLJyRxh3McoRLo3b0?usp=sh
 ### cd vgg_model/
 ### wget https://download.pytorch.org/models/vgg19-dcbb9e9d.pth
 ### Set different configuration based on the "config.py". Then run
-<sh train.sh>
+``` sh train.sh ```
 # Reference
 * https://github.com/JDAI-CV/Down-to-the-Last-Detail-Virtual-Try-on-with-Detail-Carving
 * https://github.com/CMU-Perceptual-Computing-Lab/openpose
