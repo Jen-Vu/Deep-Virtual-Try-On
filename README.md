@@ -15,7 +15,20 @@ https://colab.research.google.com/drive/1rlk-nOgIJa14UDNQLJyRxh3McoRLo3b0?usp=sh
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_1.jpeg)
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_2.jpeg)
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_3.jpeg)
-
+# Training
+## Download the dataset
+### Download the MPV dataset from Image-based Multi-pose Virtual Try On and put the dataset under "./dataset/images/".
+### Select postive perspective images, create dataset split file 'data_pair.txt', and put it under "./dataset/".
+## Dataset preprocessing
+### Pose keypoints. Use the Openpose, and put the keypoints file in "./dataset/pose_coco".
+### Semantic parsing. Use the CIHP_PGN, and put the parsing results in "./dataset/parse_cihp".
+### Cloth mask. Use the "GrabCut" method for the cloth mask, and put the mask in "./dataset/cloth_mask".
+## Coarse-to-fine training
+### Download the VGG19 pretrained checkpoint
+### cd vgg_model/
+### wget https://download.pytorch.org/models/vgg19-dcbb9e9d.pth
+### Set different configuration based on the "config.py". Then run
+<sh train.sh>
 # Reference
 * https://github.com/JDAI-CV/Down-to-the-Last-Detail-Virtual-Try-on-with-Detail-Carving
 * https://github.com/CMU-Perceptual-Computing-Lab/openpose
