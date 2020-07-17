@@ -42,6 +42,8 @@ from time import time
 import datetime
 import torch.backends.cudnn as cudnn
 import numpy as np
+import subprocess
+import shlex
 from torchvision import utils
 from PIL import Image
 from utils import pose_utils
@@ -76,7 +78,6 @@ from utils.image_reader import ImageReader
 from utils.image_reader_pgn import ImageReaderPGN
 from past.builtins import xrange
 import glob
-from detect_edges_image import CropLayer
 import argparse
 
 DATA_TYPE = ['png','PNG','jpg','JPG']
@@ -287,16 +288,6 @@ threads = tf.train.start_queue_runners(coord=coord, sess=sess)
 
 DATA_TYPE = ['png','PNG','jpg','JPG']
 
-print("[INFO] loading edge detector...")
-protoPath = os.path.sep.join(["hed_model",
-            "deploy.prototxt"])
-modelPath = os.path.sep.join(["hed_model",
-            "hed_pretrained_bsds.caffemodel"])
-net = cv2.dnn.readNetFromCaffe(protoPath, modelPath)
-
-    # register our new layer with the model
-cv2.dnn_registerLayer("Crop", CropLayer)
-
 """
 Forward function for vitural try-on
 Note : 
@@ -386,9 +377,16 @@ def upload():
 
     # save file
     destination = "/".join([target, filename])
-    upload.save("static/images/temp.jpg")    
-    
+    upload.save("static/images/temp.jpg")   
     im = Image.open("static/images/temp.jpg")
+    im.save("temp.jpg") 
+    subprocess.call(shlex.split('removebg --api-key  YeEiA6Sxr7ej1aznnERxguPc temp.jpg'))
+      
+    im = cv2.imread("temp-removebg.png", cv2.IMREAD_UNCHANGED)
+    ret, mask = cv2.threshold(im[:, :, 3], 0, 255, cv2.THRESH_BINARY)
+    cv2.imwrite("temp_mask.png",mask)
+    
+    im = Image.open("temp.jpg")
     if im.mode in ("RGBA", "P"):
       im = im.convert("RGB")
     new_width = 192
@@ -399,23 +397,13 @@ def upload():
   
 
     # load the input image and grab its dimensions
-    image = cv2.imread("dataset/cloth_image/dress.jpg")
-
-    (H, W) = image.shape[:2]
-
-    print("[INFO] performing holistically-nested edge detection...")
-    net.setInput(blob)
-    hed = net.forward()
-    hed = cv2.resize(hed[0, 0], (W, H))
-    hed = (255 * hed).astype("uint8")
-
-    # show the output edge detection results for Canny and
-    # Holistically-Nested Edge Detection
-    '''cv2.imshow("Input", image)
-    cv2.imshow("Canny", canny)
-    cv2.imshow("HED", hed)'''
-
-    cv2.imwrite("dataset/cloth_mask/dress_mask.png",hed)
+    im = Image.open("temp_mask.png")
+    if im.mode in ("RGBA", "P"):
+      im = im.convert("RGB")
+    new_width = 192
+    new_height = 256
+    im = im.resize((new_width,new_height),Image.ANTIALIAS)
+    im.save("dataset/cloth_mask/dress_mask.png")
     
     augment = {}
 
@@ -508,7 +496,7 @@ def upload():
             fake_face = create_part(fake_face, generate_parse_argmax, 'face', False) 
             generate_img_without_face = refine_img - generate_face
                       
-            refine_img =fake_face + generate_img_without_face
+            refine_img =source_face + generate_img_without_face
             "generate parse vis"
             if opt.save_time:
                 generate_parse_vis = source_parse_vis
