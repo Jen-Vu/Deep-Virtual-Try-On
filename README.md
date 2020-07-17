@@ -1,4 +1,4 @@
-# Deep Virtual Try On
+# Worlds first API for Deep Virtual Try On and android implementation
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/LICENSE)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1rlk-nOgIJa14UDNQLJyRxh3McoRLo3b0?usp=sharing)
