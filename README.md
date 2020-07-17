@@ -17,33 +17,6 @@ https://colab.research.google.com/drive/1rlk-nOgIJa14UDNQLJyRxh3McoRLo3b0?usp=sh
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_3.jpeg)
 
 # Reference
-https://github.com/JDAI-CV/Down-to-the-Last-Detail-Virtual-Try-on-with-Detail-Carving
-https://github.com/CMU-Perceptual-Computing-Lab/openpose
+* https://github.com/JDAI-CV/Down-to-the-Last-Detail-Virtual-Try-on-with-Detail-Carving
+* https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
-```
-
-## Related Publications
-If you find this code helpful, please cite the authors paper:
-```
-@inproceedings{detail2019,
-  title={Down to the Last Detail: Virtual Try-on with Detail Carving},
-  author={Wang, Jiahang and Zhang, Wei and Liu, Weizhong and Mei, Tao},
-  booktitle = {arXiv:1912.06324},
-  year={2019}
-}
-
-@inproceedings{cvpr19,
-  title={Unsupervised Person Image Generation with Semantic Parsing Transformation},
-  author={Song, Sijie and Zhang, Wei and Liu, Jiaying and Mei, Tao},
-  booktitle = {CVPR},
-  year={2019}
-}
-
-@inproceedings{pami20,
-  title={Unpaired Person Image Generation with Semantic Parsing Transformation},
-  author={Song, Sijie and Zhang, Wei and Liu, Jiaying and Guo, Zongming and Mei, Tao},
-  booktitle = {IEEE Trans. on PAMI},
-  year={2020}
-}
-
-```
