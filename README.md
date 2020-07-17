@@ -15,6 +15,8 @@ https://colab.research.google.com/drive/1rlk-nOgIJa14UDNQLJyRxh3McoRLo3b0?usp=sh
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_1.jpeg)
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_2.jpeg)
 ![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_3.jpeg)
+![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_4.jpg)
+![alt text](https://github.com/kishorkuttan/Deep-Virtual-Try-On/blob/master/demo_5.jpeg)
 # Training
 ## Download the dataset
 ### Download the MPV dataset from Image-based Multi-pose Virtual Try On and put the dataset under "./dataset/images/".
