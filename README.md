@@ -33,3 +33,4 @@ https://colab.research.google.com/drive/1rlk-nOgIJa14UDNQLJyRxh3McoRLo3b0?usp=sh
 * https://github.com/JDAI-CV/Down-to-the-Last-Detail-Virtual-Try-on-with-Detail-Carving
 * https://github.com/CMU-Perceptual-Computing-Lab/openpose
 * https://www.pyimagesearch.com/2019/03/04/holistically-nested-edge-detection-with-opencv-and-deep-learning/
+* https://www.remove.bg/
